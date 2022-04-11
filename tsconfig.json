@@ -1,0 +1,19 @@
+{
+	"include": [ "src" ],
+	"compilerOptions": {
+		"target": "es6",
+		"module": "umd",
+		"lib": [ "dom" ],
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"baseUrl": "./",
+		"outDir": "./www/js",
+		"typeRoots": [
+			"./node_modules/@types",
+			"./src/@types",
+		],
+		"paths": {
+			"*": [ "node_modules/*" ],
+		}
+	}
+}

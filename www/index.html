@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-security-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+
+	<title>GoonVJ</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./lib/bootstrap4/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./lib/fontawesome5/all.min.css" />
+	<script type="text/javascript" src="./lib/require.js"></script>
+	<script type="text/javascript">
+		require.config({
+			baseUrl: './js'
+		});
+
+		require(
+			[ '../lib/jquery', 'GoonVJ/Client/Main' ],
+			function(jQuery, Main) {
+				new Main.default;
+				return;
+			}
+		);
+	</script>
+</head>
+<body>
+</body>
+</html>
