@@ -8,3 +8,4 @@ Electron.app.on('ready', function(){
 	const server = new GoonVJ(__dirname);
 	return;
 });
+

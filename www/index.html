@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-security-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+	<meta
+		http-equiv="content-security-policy"
+		content="script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+	/>
 
 	<title>GoonVJ</title>
 
-	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./lib/bootstrap4/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="./lib/fontawesome5/all.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+
 	<script type="text/javascript" src="./lib/require.js"></script>
 	<script type="text/javascript">
 		require.config({
@@ -24,5 +28,10 @@
 	</script>
 </head>
 <body>
+
+<div id="UIRoot" class="UIRoot">
+
+</div>
+
 </body>
 </html>

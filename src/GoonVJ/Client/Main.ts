@@ -6,10 +6,13 @@ class Main {
 
 	msg: Messenger;
 	home: ScreenHome;
+	root: JQuery;
 
 	constructor() {
 		this.msg = new Messenger;
-		this.home = new ScreenHome;
+
+		this.root = jQuery('#UIRoot');
+		this.home = new ScreenHome(this.root);
 
 		this.msg.send(new Message('hey'));
 		return;

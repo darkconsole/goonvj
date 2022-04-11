@@ -18,23 +18,60 @@ html, body {
 	color: var(--TextColour);
 	font-family: var(--FontFamily);
 
+	position: relative;
 	margin: 0px;
 	padding: 0px;
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 }
 
 /*******************************************************************************
 *******************************************************************************/
 
 .position-absolute { position: absolute; }
-.position-absolutely { position: absolute; top: 0px; left: 0px; height: 100vh; width: 100vw; }
+.position-absolutely { position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; }
 .position-relative { position: relative; }
+
+.ratiobox { position: relative; padding-top: 100%; overflow: hidden; }
+
+.ratiobox.one-x-one,
+.ratiobox.square { padding-top: 100%; }
+
+.ratiobox.four-x-three,
+.ratiobox.tv { padding-top: 75%; }
+
+.ratiobox.sixteen-x-ten,
+.ratiobox.widemeh { padding-top: 62.5%; }
+
+.ratiobox.sixteen-x-nine,
+.ratiobox.widescreen { padding-top: 56.25%; }
+
+.ratiobox.onenine-x-one,
+.ratiobox.imax { padding-top: 52.63%; }
+
+.ratiobox.two-x-one,
+.ratiobox.univisium { padding-top: 50%; }
+
+.ratiobox.twentyone-x-nine,
+.ratiobox.ultrawide { padding-top: 42.85%; }
 
 /*******************************************************************************
 *******************************************************************************/
 
-#ScreenHome {
+.UIRoot {
+	position: absolute;
+	top: 0px; left: 0px;
+	width: 100vw; height: 100vh;
+
 	background: rgb(131,58,180);
 	background: linear-gradient(73deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.UIScreen {
+	position: absolute;
+	top: 0px; left: 0px;
+	width: 100vw; height: 100vh;
+
+	background: rgb(34,193,195);
+	background: linear-gradient(0deg, rgba(34,193,195,0.5018207966780462) 0%, rgba(253,187,45,0.5018207966780462) 100%);
 }
