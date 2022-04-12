@@ -15,6 +15,12 @@ class Message {
 		return JSON.stringify(this);
 	}
 
+	static fromObject(input: { type: string, payload: any }):
+	Message {
+
+		return new Message(input.type, input.payload);
+	}
+
 };
 
 export default Message;

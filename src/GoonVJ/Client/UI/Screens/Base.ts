@@ -1,20 +1,20 @@
+import GoonVJ from '../../../Client/Main';
 
 class Base {
 
-	root: JQuery;
+	main: GoonVJ;
 	element: JQuery;
 
-	constructor(root: JQuery) {
+	constructor(main: GoonVJ) {
 
-		this.root = root;
+		this.main = main;
 
 		this.element = (
 			jQuery('<div />')
 			.addClass('UIScreen')
-			.append('yolo swag')
 		);
 
-		this.root.append(this.element);
+		this.main.root.append(this.element);
 		return;
 	};
 

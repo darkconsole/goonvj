@@ -1,12 +1,11 @@
 import Base from './Base';
+import Client from '../../../Client/Main';
 
 class Home
 extends Base {
 
-	container: JQuery;
-
-	constructor(root: JQuery) {
-		super(root);
+	constructor(main: Client) {
+		super(main);
 
 		return;
 	};

@@ -7,7 +7,7 @@ class Messenger {
 	constructor() {
 
 		(window.goon)
-		.ipcRendererOn(this.onRecvAsync.bind(this));
+		.ipcRendererOnMsg(this.onRecvAsync.bind(this));
 
 		return;
 	};
@@ -20,7 +20,8 @@ class Messenger {
 		return;
 	};
 
-	send(msg: Message) {
+	send(msg: Message):
+	this {
 
 		console.log(`[Msg:send] >> ${msg}`);
 
@@ -29,6 +30,17 @@ class Messenger {
 
 		return this;
 	};
+
+	sendTo(name: string, msg: Message):
+	this {
+
+		console.log(`[Msg:send] >> ${name} ${msg}`);
+
+		(window.goon)
+		.ipcRendererSendTo(name, msg);
+
+		return this;
+	}
 
 };
 

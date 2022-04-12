@@ -9,43 +9,46 @@ class Messenger {
 	constructor(api: Electron.IpcMain, web: Electron.WebContents) {
 		this.api = api;
 		this.web = web;
-
-		this.api.on(
-			'asynchronous-message',
-			this.onAsync.bind(this)
-		);
-
-		this.api.on(
-			'synchronous-message',
-			this.onSync.bind(this)
-		);
-
 		return;
 	}
 
-	onAsync(ev: Electron.IpcMainEvent, msg: Message) {
-		msg = new Message(msg.type, msg.payload);
+	onRecvAsync(ev: Electron.IpcMainEvent, msg: Message):
+	void {
+		msg = Message.fromObject(msg);
 
 		console.log(`[Server:Msg:onRecvAsync] << ${msg.toString()}`);
-		this.send(new Message('sup'));
+
 		return;
 	};
 
-	onSync(ev: Electron.IpcMainEvent, msg: Message) {
-		msg = new Message(msg.type, msg.payload);
+	onRecvSync(ev: Electron.IpcMainEvent, msg: Message):
+	void {
+		msg = Message.fromObject(msg);
 
 		console.log(`[Server:Msg:onRecvSync] << ${msg.toString()}`);
-		console.log(msg);
-		return;
-	}
-
-	send(msg: Message) {
-
-		console.log(`[Server:Msg:send] >> ${msg}`);
-		this.web.send('asynchronous-message', msg);
 
 		return;
-	}
+	};
+
+	send(msg: Message):
+	void {
+
+		this.sendTo(
+			'asynchronous-message',
+			msg
+		);
+
+		return;
+	};
+
+	sendTo(name: string, msg: Message):
+	void {
+
+		console.log(`[Server:Msg:send] >> ${name} ${msg}`);
+		this.web.send(name, msg);
+
+		return;
+	};
 
 };
 
