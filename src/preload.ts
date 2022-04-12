@@ -7,7 +7,7 @@ let screenInfo = new ScreenInfo;
 (Electron.contextBridge)
 .exposeInMainWorld('goon', {
 	screenWidth: screenInfo.w,
-	screenHeigh: screenInfo.h,
+	screenHeight: screenInfo.h,
 	screenRatio: screenInfo.r,
 	screenRatioInverted: screenInfo.ri,
 
